@@ -1,0 +1,201 @@
+.sidenav {
+    background: #263238;
+    transition: all .5s ease;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+    box-shadow: 0.063rem 0 1.25rem 0 #8690a3;
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        padding: 0.938rem 0.938rem 0 0.938rem;
+        width: 100%;
+
+        .logo {
+            background: #fff;
+            text-align: center;
+            width: 3rem;
+            min-width: 3rem;
+            border-radius: 0.313rem;
+            padding: 0.313rem;
+            font-size: 24px;
+            font-weight: 900;
+            cursor: pointer;
+            border: none;
+        }
+
+        .logo-text {
+            margin-left: 1.5rem;
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .btn-close {
+            margin-left: auto;
+            cursor: pointer;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: transparent;
+            border: none;
+
+            .fa-times {
+                color: #fff;
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+.sidenav-collapsed {
+    width: 16.5625rem;
+}
+
+.sidenav-nav {
+    list-style: none;
+    padding: 0.938rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+
+    .sidenav-nav-item {
+        width: 100%;
+        margin-bottom: 0.625rem;
+
+        .sidenav-nav-link {
+            display: flex;
+            align-items: center;
+            height: 3rem;
+            color: #f3f3f3;
+            text-decoration: none;
+            border-radius: 0.625rem;
+            transition: all .3s ease;
+
+            .sidenav-link-icon {
+                font-size: 22px;
+                width: 2rem;
+                min-width: 2rem;
+                margin: 0 0.5rem;
+                text-align: center;
+            }
+
+            .sidenav-link-text {
+                margin-left: 1.5rem;
+            }
+        }
+
+        .sidenav-nav-link:hover {
+            background-color: #fff;
+            color: #000;
+
+            .menu-collapse-icon {
+                color: #000;
+            }
+        }
+    }
+}
+
+.active {
+    background-color: #fff;
+
+    .menu-collapse-icon,
+    .sidenav-link-icon,
+    .sidenav-link-text {
+        color: #000;
+    }
+}
+
+.active-sublevel {
+    color: #f3f3f3 !important;
+    // opacity: 1 !important;
+}
+
+.menu-collapse-icon {
+    font-size: 25px;
+    width: 2rem;
+    min-width: 2rem;
+    margin: auto 0.5rem auto auto;
+    text-align: center;
+    color: #f3f3f3;
+}
+
+.sublevel-nav {
+    list-style: none;
+    margin-left: 10px;
+
+    .sublevel-nav-item {
+        .sublevel-nav-link {
+            display: flex;
+            align-items: center;
+            height: 3rem;
+            color: #898989;
+            text-decoration: none;
+            border-radius: 0.625rem;
+            transition: all .3s ease;
+
+            .sublevel-link-icon {
+                font-size: 4px;
+                width: 2rem;
+                min-width: 2rem;
+                margin: 0 0.5rem;
+                text-align: center;
+            }
+
+            .sublevel-link-text {
+                margin-left: 0.8rem;
+            }
+        }
+
+        .sublevel-nav-link:hover {
+            color: #f3f3f3;
+        }
+    }
+}
+
+//scrollbar and visibility on hover and focus
+
+.scrollwrap {
+    overflow-y: auto;
+    visibility: hidden;
+    height: calc(100% - 3.65rem);
+}
+
+.sidenav-nav,
+.scrollwrap:hover,
+.scrollwrap:focus {
+    visibility: visible;
+}
+
+.scrollwrap_delayed {
+    transition: visibility 0.5s 0.2s;
+}
+
+.scrollwrap_delayed:hover {
+    transition: visibility 0.2s 0.2s;
+}
+
+// works on chrome, edge and safari
+.scrollwrap::-webkit-scrollbar {
+    width: 10px;
+}
+
+.scrollwrap::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.scrollwrap::-webkit-scrollbar-thumb {
+    background-color: #556268;
+    border-radius: 20px;
+}
+
+// works on firefox
+.scrollwrap {
+    scrollbar-width: thin;
+    scrollbar-color: #556268 transparent;
+}
